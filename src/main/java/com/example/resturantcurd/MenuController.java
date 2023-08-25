@@ -17,7 +17,6 @@ public class MenuController {
         menuService.addMenuItems(menu);
         return ResponseEntity.ok("Menu Updated");
     }
-
     @GetMapping
     public ResponseEntity<List<Menu>> getMenu() {
         List<Menu> allMenus = menuService.getAllMenus();
