@@ -23,4 +23,9 @@ public class MenuController {
         List<Menu> allMenus = menuService.getAllMenus();
         return ResponseEntity.ok(allMenus);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteMenuById(@PathVariable Long id) {
+        menuService.deleteById(id);
+        return ResponseEntity.ok("Menu Items Deleted");
+    }
 }
