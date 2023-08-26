@@ -17,14 +17,14 @@ public class MenuController {
         menuService.addMenuItems(menu);
         return ResponseEntity.ok("Menu Updated");
     }
-<<<<<<< HEAD
+
 
 //    @PostMapping("/save-all")
 //    public ResponseEntity<String>addMultipleItems(@RequestBody Menu menu){
 //        List<Menu> allItems = menuService.saveAll(menu);
 //        return ResponseEntity.ok("Multiple Items saved");
 //    }
-=======
+
     @PostMapping("/save-all-items")
     public List<Menu> saveAll(@RequestBody List<Menu> menuToSave){
         return menuService.saveAll(menuToSave);
@@ -35,7 +35,6 @@ public class MenuController {
         List<Menu> saveAllMenu = menuService.saveAll(menuToSave);
         return ResponseEntity.ok(menuToSave);
     }
->>>>>>> CURD
 
     @GetMapping
     public ResponseEntity<List<Menu>> getMenu() {

@@ -29,13 +29,12 @@ public class MenuService {
         menuRepository.deleteById(id);
     }
 
-<<<<<<< HEAD
 //    public List<Menu> saveAll(Menu menu) {
 //        return menuRepository.saveAll();
 //    }
-=======
+
     public List<Menu> saveAll(List<Menu> menuToSave) {
         return menuRepository.saveAll(menuToSave);
     }
->>>>>>> CURD
+
 }
