@@ -17,6 +17,17 @@ public class MenuController {
         menuService.addMenuItems(menu);
         return ResponseEntity.ok("Menu Updated");
     }
+    @PostMapping("/save-all-items")
+    public List<Menu> saveAll(@RequestBody List<Menu> menuToSave){
+        return menuService.saveAll(menuToSave);
+    }
+
+    @PostMapping("/save-all") // save all with ResponseEntity
+    public ResponseEntity<List<Menu>> saveAllMenu(@RequestBody List<Menu> menuToSave){
+        List<Menu> saveAllMenu = menuService.saveAll(menuToSave);
+        return ResponseEntity.ok(menuToSave);
+    }
+
     @GetMapping
     public ResponseEntity<List<Menu>> getMenu() {
         List<Menu> allMenus = menuService.getAllMenus();
