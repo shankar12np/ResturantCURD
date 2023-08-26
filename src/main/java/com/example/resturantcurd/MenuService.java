@@ -28,4 +28,8 @@ public class MenuService {
     public void deleteById(Long id) {
         menuRepository.deleteById(id);
     }
+
+//    public List<Menu> saveAll(Menu menu) {
+//        return menuRepository.saveAll();
+//    }
 }
