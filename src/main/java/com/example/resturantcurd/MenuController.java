@@ -21,6 +21,28 @@ public class MenuController {
     public List<Menu> saveAll(@RequestBody List<Menu> menuToSave){
         return menuService.saveAll(menuToSave);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateMenuById(@PathVariable Long id, @RequestBody Menu updatedMenu) {
+        // Call the service method to update the menu item
+        boolean updated = menuService.updateMenuById(id, updatedMenu);
+
+        if (updated) {
+            return ResponseEntity.ok("Menu updated");
+        } else {
+            return ResponseEntity.notFound().build(); // Or return an appropriate response for not found
+        }
+    }
+    @PatchMapping("/{id}")
+    public ResponseEntity<String> partialUpdateMenuById(@PathVariable Long id, @RequestBody Menu updatedMenu){
+        boolean updated = menuService.partialUpdateMenu(id, updatedMenu);
+        if (updated){
+            return ResponseEntity.ok("Menu partially updated");
+        }else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 
     @PostMapping("/save-all") // save all with ResponseEntity
     public ResponseEntity<List<Menu>> saveAllMenu(@RequestBody List<Menu> menuToSave){

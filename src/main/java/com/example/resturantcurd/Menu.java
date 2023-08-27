@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "Menu")
 @Data
@@ -13,12 +16,14 @@ import lombok.NoArgsConstructor;
 public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "menu_id")
+    private Long id;
 
-    Long id;
-    String soup;
-    String appetizer;
-    String seafood;
-    String poultry;
-    String meat;
+    private String soup;
+    private String appetizer;
+    private String seafood;
+    private String poultry;
+    private String meat;
+
 
 }
