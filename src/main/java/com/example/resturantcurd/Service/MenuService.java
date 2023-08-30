@@ -1,5 +1,7 @@
-package com.example.resturantcurd;
+package com.example.resturantcurd.Service;
 
+import com.example.resturantcurd.Entity.Menu;
+import com.example.resturantcurd.Repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

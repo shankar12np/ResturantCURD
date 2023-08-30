@@ -1,5 +1,8 @@
-package com.example.resturantcurd;
+package com.example.resturantcurd.Controller;
 
+import com.example.resturantcurd.Entity.Menu;
+import com.example.resturantcurd.Service.InventoryService;
+import com.example.resturantcurd.Service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +14,8 @@ import java.util.List;
 public class MenuController {
     @Autowired
     MenuService menuService;
+    @Autowired
+    InventoryService inventoryService;
 
     @PostMapping
     public ResponseEntity<String> addMenuIteams(@RequestBody Menu menu) {
